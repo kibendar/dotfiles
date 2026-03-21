@@ -313,4 +313,4 @@ JetBrainsMono Nerd Font is used across all tools. Install it from [Nerd Fonts](h
 
 ## Color theme
 
-[Catppuccin Mocha](https://github.com/catppuccin/catppuccin) is the unified theme across Neovim, Tmux, Ghostty, and Lazygit. btop uses Tokyo Night.
+[Catppuccin Mocha](https://github.com/catppuccin/catppuccin) is the unified theme across Neovim, Tmux, Ghostty, and Lazygit, Btop.
