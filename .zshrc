@@ -79,6 +79,13 @@ bindkey '^n' history-search-forward
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
+function zvm_config() {
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+  ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+  ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
+}
+
+
 # ----------------------------------------------------------------------------
 # HISTORY CONFIGURATION
 # ----------------------------------------------------------------------------

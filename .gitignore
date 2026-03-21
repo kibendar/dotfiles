@@ -1,1 +1,85 @@
+# ── Environment variables ─────────────────────────────────────────────────────
 .env
+.env.*
+.envrc
+*.env
+
+# ── SSH keys & configs ────────────────────────────────────────────────────────
+.ssh/id_rsa
+.ssh/id_rsa*
+.ssh/id_ed25519
+.ssh/id_ed25519*
+.ssh/id_ecdsa
+.ssh/id_ecdsa*
+.ssh/id_dsa
+.ssh/id_dsa*
+.ssh/authorized_keys
+.ssh/known_hosts
+
+# ── GPG / PGP keys ────────────────────────────────────────────────────────────
+*.gpg
+*.pgp
+*.asc
+secring.*
+pubring.*
+trustdb.gpg
+private-keys-v1.d/
+
+# ── TLS / x509 certificates & private keys ───────────────────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+
+# ── Cloud provider credentials ────────────────────────────────────────────────
+# AWS
+.aws/credentials
+
+# GCP
+.config/gcloud/credentials.db
+.config/gcloud/legacy_credentials/
+application_default_credentials.json
+
+# Azure
+.azure/
+
+# ── API tokens & secrets ──────────────────────────────────────────────────────
+.netrc
+.authinfo
+.authinfo.gpg
+token
+token.json
+*_token
+*_secret
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+credentials.yaml
+credentials.yml
+
+# ── Password managers / keyrings ─────────────────────────────────────────────
+.password-store/
+.gnupg/
+*.kdbx
+
+# ── History files (may contain secrets typed on the CLI) ─────────────────────
+.bash_history
+.zsh_history
+.sh_history
+.python_history
+.mysql_history
+.psql_history
+.lesshst
+.node_repl_history
+.irb_history
+
+# ── Editor / OS noise ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
