@@ -11,7 +11,7 @@ cd ~/.dotfiles
 stow .
 ```
 
-> **Note:** Install all required tools before running `stow`. See the sections below for per-tool dependencies.
+> **Note:** Install all required tools before running `stow .` command. See the sections below for per-tool dependencies.
 
 ---
 
@@ -24,9 +24,9 @@ stow .
 | [Tmux](#-tmux)           | Terminal multiplexer | Catppuccin Mocha |
 | [Ghostty](#-ghostty)     | Terminal emulator    | Catppuccin Mocha |
 | [Lazygit](#-lazygit)     | Git TUI              | Catppuccin Mocha |
-| [btop](#-btop)           | System monitor       | Tokyo Night      |
+| [btop](#-btop)           | System monitor       | Catppuccin Mocha |
 | [fastfetch](#-fastfetch) | System info          | —                |
-| [mpv](#-mpv)             | Media player         | —                |
+| [mpv](#-mpv)             | Media player         | Catppuccin Mocha |
 
 ---
 
@@ -313,4 +313,4 @@ JetBrainsMono Nerd Font is used across all tools. Install it from [Nerd Fonts](h
 
 ## Color theme
 
-[Catppuccin Mocha](https://github.com/catppuccin/catppuccin) is the unified theme across Neovim, Tmux, Ghostty, and Lazygit, Btop.
+[Catppuccin Mocha](https://github.com/catppuccin/catppuccin) is the unified theme across Neovim, Tmux, Ghostty, and Lazygit, Btop, MPV.
