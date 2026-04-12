@@ -23,3 +23,5 @@ map("x", "<leader>p", [["_dP]])
 map("i", "<C-c>", "<Esc>")
 
 map("x", ";", ":")
+
+map("x", "<leader>tv", "<CMD>Translate RU<CR>", { desc = "Translate highlighted text" })
