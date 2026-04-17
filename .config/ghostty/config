@@ -1,4 +1,4 @@
-theme = Catppuccin Mocha
+theme = noctalia
 
 font-family = JetBrainsMono Nerd Font 
 
@@ -10,7 +10,7 @@ keybind = shift+enter=paste_from_clipboard
 
 confirm-close-surface = false
 
-maximize
+background-opacity = 0.90
 
 custom-shader = shaders/cursor_warp.glsl
 
