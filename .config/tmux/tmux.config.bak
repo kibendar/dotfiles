@@ -1,11 +1,11 @@
 # Unbind the default prefix
-unbind C-b
+ unbind C-b
 
-# Set Ctrl+A as prefix
-set -g prefix C-a
+   # Set Ctrl+A as prefix
+ set -g prefix C-a
 
-# Bind the prefix key
-bind C-a send-prefix
+   # Bind the prefix key
+ bind C-a send-prefix
 
 
 set -g detach-on-destroy off
@@ -14,6 +14,8 @@ set -g history-limit 1000000
 set -g set-clipboard on
 set -g status-position top
 
+set -g pane-active-border-style 'fg=magenta,bg=default'
+set -g pane-border-style 'fg=brightblack,bg=default'
 
 set -g allow-passthrough on
 set -g mouse on
@@ -25,14 +27,6 @@ set-window-option -g pane-base-index 1
 set-window-option -g mode-keys vi
 set-option -g renumber-windows on
 set-option -sa terminal-overrides ",xterm*:Tc"
-
-# ============================================
-# COPY MODE & MESSAGES — Kanagawa
-# ============================================
-set -g mode-style "bg=#2D4F67,fg=#DCD7BA"
-set -g message-style "bg=#2A2A37,fg=#E6C384"
-set -g message-command-style "bg=#2A2A37,fg=#7FB4CA"
-
 # ============================================
 # PANE MANAGEMENT (Alt-based)
 # ============================================
@@ -87,6 +81,11 @@ bind -n M-> swap-window -t +1\; select-window -t +1
 # ============================================
 # SESSION MANAGEMENT (Alt-based)
 # ============================================
+# Quick session switching
+# bind -n M-w choose-tree
+# Quick session switching with sessionx
+# bind -n M-w run-shell "~/.config/tmux/plugins/tmux-sessionx/scripts/sessionx.sh"
+
 bind-key -n M-w run-shell "~/.config/tmux/plugins/tmux-fzf/scripts/session.sh switch"
 
 # Kill session with confirmation
@@ -112,6 +111,10 @@ bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection-and-cancel
 
 # Paste with Alt+p
 bind -n M-p paste-buffer
+
+# Show all paste buffers
+# Change from M-P to something else
+# bind -n M-B choose-buffer  # Use M-B instead
 
 # ============================================
 # USEFUL SHORTCUTS (Alt-based)
@@ -145,7 +148,9 @@ set -g @plugin 'omerxx/tmux-sessionx'
 # ============================================
 # THEME PLUGINS
 # ============================================
-set -g @plugin 'omerxx/catppuccin-tmux'
+# set -g @plugin "janoamaral/tokyo-night-tmux"
+# set -g @plugin 'rose-pine/tmux'
+set -g @plugin 'omerxx/catppuccin-tmux' # My fork that holds the meetings script bc I'm lazy af
 
 # ============================================
 # CONFIGURE PLUGINS
@@ -153,12 +158,12 @@ set -g @plugin 'omerxx/catppuccin-tmux'
 set -g @continuum-restore 'on'
 set -g @resurrect-strategy-nvim 'session'
 set -g @continuum-save-interval '15'
-set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
+set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
 set -g @fzf-url-history-limit '2000'
 set -g @floax-width '80%'
 set -g @floax-height '80%'
-set -g @floax-border-color '#7E9CD8'    # crystalBlue
-set -g @floax-text-color '#DCD7BA'      # fujiWhite
+set -g @floax-border-color 'magenta'
+set -g @floax-text-color 'blue'
 set -g @floax-bind '-n M-p'
 set -g @floax-change-path 'true'
 set -g @sessionx-bind-select-up 'ctrl-k'
@@ -173,10 +178,11 @@ set -g @sessionx-bind-delete-char 'bspace'
 set -g @sessionx-window-height '85%'
 set -g @sessionx-window-width '75%'
 bind-key -n M-f run-shell -b "~/.config/tmux/plugins/tmux-fzf/main.sh"
-
 # ============================================
 # CONFIGURE THEME PLUGINS
 # ============================================
+# set -g @rose_pine_variant 'moon' # Options are 'main', 'moon' or 'dawn'
+
 set -g @catppuccin_window_left_separator ""
 set -g @catppuccin_window_right_separator " "
 set -g @catppuccin_window_middle_separator " █"
@@ -200,9 +206,3 @@ bind -n M-U run-shell '~/.config/tmux/plugins/tpm/bindings/update_plugins'
 bind -n M-C run-shell '~/.config/tmux/plugins/tpm/bindings/clean_plugins'
 
 run '~/.config/tmux/plugins/tpm/tpm'
-
-# ============================================
-# PANE BORDERS — Kanagawa
-# ============================================
-set -g pane-active-border-style 'fg=#C0A36E,bg=default'
-set -g pane-border-style 'fg=#363646,bg=default'
