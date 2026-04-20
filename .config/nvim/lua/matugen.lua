@@ -6,21 +6,21 @@ function M.setup()
     base00 = "#1f1f28", -- Default Background
     base01 = "#2a2a37", -- Lighter Background (status bars)
     base02 = "#333343", -- Selection Background
-    base03 = "#676785", -- Comments, Invisibles
+    base03 = "#526e7c", -- Comments, Invisibles
     -- Foreground tones
-    base04 = "#717c7c", -- Dark Foreground (status bars)
-    base05 = "#c8c093", -- Default Foreground
-    base06 = "#c8c093", -- Light Foreground
-    base07 = "#c8c093", -- Lightest Foreground
+    base04 = "#c8c093", -- Dark Foreground (status bars)
+    base05 = "#dcd7ba", -- Default Foreground
+    base06 = "#dcd7ba", -- Light Foreground
+    base07 = "#dcd7ba", -- Lightest Foreground
     -- Accent colors
-    base08 = "#c34043", -- Variables, XML Tags, Errors
-    base09 = "#7e9cd8", -- Integers, Constants
-    base0A = "#c0a36e", -- Classes, Search Background
-    base0B = "#76946a", -- Strings, Diff Inserted
-    base0C = "#96b1e9", -- Regex, Escape Chars
-    base0D = "#ade996", -- Functions, Methods
-    base0E = "#e9cb96", -- Keywords, Storage
-    base0F = "#430d0e", -- Deprecated, Embedded Tags
+    base08 = "#c4746e", -- Variables, XML Tags, Errors
+    base09 = "#938aa9", -- Integers, Constants
+    base0A = "#8ea49e", -- Classes, Search Background
+    base0B = "#c4b28a", -- Strings, Diff Inserted
+    base0C = "#ae96e9", -- Regex, Escape Chars
+    base0D = "#e9cf96", -- Functions, Methods
+    base0E = "#96e9d2", -- Keywords, Storage
+    base0F = "#64201b", -- Deprecated, Embedded Tags
   })
 end
 

@@ -57,8 +57,12 @@ plugins=(
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath=(~/ $fpath)
+
 source "$ZSH/oh-my-zsh.sh"
 
+autoload -Uz compinit
+compinit
 # ----------------------------------------------------------------------------
 # COMPLETION STYLING  (after compinit, which OMZ runs automatically)
 # ----------------------------------------------------------------------------
@@ -134,6 +138,7 @@ fi
 alias ls="eza --icons=always --no-time --no-user --no-permissions"
 alias ll="eza --tree --level=1 -la"
 alias cat="bat"
+alias convert="magick"
 
 # ----------------------------------------------------------------------------
 # ALIASES — EDITORS & NAVIGATION
