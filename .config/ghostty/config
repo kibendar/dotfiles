@@ -19,3 +19,5 @@ cursor-style = block
 # Shell integration
 shell-integration = zsh
 shell-integration-features = no-cursor,no-sudo
+
+window-padding-balance = true
