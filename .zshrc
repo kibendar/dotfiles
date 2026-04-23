@@ -177,9 +177,15 @@ alias ta='tmux attach-session -t'
 alias tk='tmux kill-session -t'
 
 # ----------------------------------------------------------------------------
+# ALIASES — TIMESHIFT
+# ----------------------------------------------------------------------------
+alias tsl="sudo timeshift --list"
+alias tsd="sudo timeshift --delete --snapshot"
+alias tsc="sudo timeshift --create"
+ 
+# ----------------------------------------------------------------------------
 # ALIASES — CLAUDE
 # ----------------------------------------------------------------------------
-
 alias c="claude"
 alias cc="claude --continue"
 
