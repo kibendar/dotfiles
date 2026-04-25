@@ -1,0 +1,53 @@
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+
+// WezTerm initial configure bug workaround
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// Development: terminals
+window-rule {
+    match app-id=r#"^(com\.mitchellh\.ghostty|org\.gnome\.Terminal|com\.raggesilver\.BlackBox|foot|footclient|kitty|alacritty|wezterm|org\.wezfurlong\.wezterm|tilix|org\.gnome\.Tilix|xterm|urxvt|rxvt-unicode|st|termite|konsole|org\.kde\.konsole|yakuake|org\.kde\.yakuake|xfce4-terminal|org\.xfce\.terminal|lxterminal|cool-retro-term|hyper|tabby|contour|rio)$"#
+    open-on-workspace "development"
+}
+
+// Development: editors and IDEs
+window-rule {
+    match app-id=r#"^(code|Code|com\.visualstudio\.code|codium|VSCodium|com\.vscodium\.codium|jetbrains-idea|jetbrains-idea-ce|jetbrains-pycharm|jetbrains-pycharm-ce|jetbrains-webstorm|jetbrains-clion|jetbrains-goland|jetbrains-rider|jetbrains-rubymine|jetbrains-datagrip|jetbrains-phpstorm|jetbrains-fleet|neovide|lapce|zed|dev\.zed\.Zed|helix|sublime-text|subl|com\.sublimetext\.three|atom|cudatext|lite-xl|geany)$"#
+    open-on-workspace "development"
+}
+
+// Browser
+window-rule {
+    match app-id=r#"^(zen|zen-alpha|firefox|firefox-esr|firefox-developer-edition|librewolf|floorp|waterfox|mullvad-browser|tor-browser|brave-browser|google-chrome|chromium|vivaldi|opera|epiphany|falkon|qutebrowser|min|midori|nyxt|surf|luakit)$"#
+    open-on-workspace "browser"
+}
+
+// Media: messengers and communication
+window-rule {
+    match app-id=r#"^(Telegram|org\.telegram\.desktop|com\.discordapp\.Discord|discord|vesktop|webcord|armcord|equibop|equicord|lightcord|dorion|Element|im\.riot\.Riot|org\.gnome\.Fractal|signal|org\.signal\.Signal|slack|com\.slack\.Slack|teams|com\.microsoft\.Teams|skype|com\.skypeforlinux\.Skype|whatsapp-nativefier|caprine|purple-discord|nheko|org\.nheko\.Nheko|fluffychat|io\.github\.FluffyChat|spectral|neochat|org\.kde\.neochat|schildichat|thunderbird|org\.mozilla\.Thunderbird|geary|org\.gnome\.Geary|evolution|org\.gnome\.Evolution)$"#
+    open-on-workspace "media"
+}
+
+// Utility: password managers, file sharing, tools
+window-rule {
+    match app-id=r#"^(org\.keepassxc\.KeePassXC|org\.gnome\.World\.Secrets|bitwarden|com\.bitwarden\.desktop|1password|localsend|com\.github\.tchx84\.Flatseal|gnome-disks|org\.gnome\.DiskUtility|org\.gnome\.baobab|org\.gnome\.Nautilus|thunar|org\.xfce\.thunar|nemo|org\.gnome\.FileRoller|ark|org\.kde\.ark|org\.kde\.dolphin|com\.github\.unrud\.VideoDownloader|org\.gnome\.Boxes|virt-manager|org\.virt_manager\.virt-manager|org\.gnome\.font-viewer|pavucontrol|org\.pulseaudio\.pavucontrol|nm-connection-editor|org\.gnome\.NetworkDisplays|dconf-editor|ca\.desrt\.dconf-editor|org\.gnome\.tweaks|gparted|org\.gnome\.Calendar|org\.gnome\.Contacts|org\.gnome\.clocks)$"#
+    open-on-workspace "utility"
+}
+
+// Global: rounded corners
+window-rule {
+    open-maximized true
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}

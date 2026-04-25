@@ -1,0 +1,22 @@
+// Niri configuration entry point
+// https://yalter.github.io/niri/Configuration:-Introduction
+
+prefer-no-csd
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+include "./input.kdl"
+include "./layout.kdl"
+include "./workspaces.kdl"
+include "./window-rules.kdl"
+include "./binds.kdl"
+include "./noctalia.kdl"
+include "./gestures.kdl"
+include "./spawn.kdl"
+include "./monitors.kdl"
+include "./animations.kdl"
+include "./environment.kdl"

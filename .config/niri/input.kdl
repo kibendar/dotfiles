@@ -1,0 +1,26 @@
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 200
+
+        xkb {
+            layout "us,ru,ua"
+            options "grp:win_space_toggle"
+        }
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+    }
+
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="0%"
+}

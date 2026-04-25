@@ -1,0 +1,4 @@
+spawn-sh-at-startup "qs -c noctalia-shell"
+spawn-sh-at-startup "swaybg -i $HOME/Wallpapers/yggdrasil-tree-red_HQ.png"
+spawn-at-startup "zen"
+spawn-sh-at-startup "ghostty -e tmux"
