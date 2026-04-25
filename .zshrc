@@ -10,11 +10,16 @@ export PATH="$PATH:/home/dunkan/.local/bin:/usr/local/bin"
 
 export EDITOR=nvim
 export VISUAL=$EDITOR
-export BROWSER=/usr/bin/firefox
+export BROWSER=$HOME/.local/bin/zen
 export LC_TIME=en_US.UTF-8
 export GPG_TTY=$(tty)
 export NVM_DIR="$HOME/.nvm"
 CONFIG_DIR="$HOME/.config"
+
+# ----------------------------------------------------------------------------
+#  APPS ENVIRONMENT
+# ----------------------------------------------------------------------------
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # ----------------------------------------------------------------------------
 # HISTORY
