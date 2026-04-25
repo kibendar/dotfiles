@@ -146,6 +146,7 @@ alias cat="bat"
 alias v='nvim'
 alias y="yazi"
 alias ff="fastfetch"
+alias brf='brrtfetch ~/Gifs/arch.gif -info "fastfetch --config ~/.config/brrtfetch/config_brf.jsonc" -width 20 -fps 17'
 
 # ----------------------------------------------------------------------------
 # ALIASES — GIT
