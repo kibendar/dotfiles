@@ -15,7 +15,7 @@ binds {
     // Launch apps
     Mod+Return hotkey-overlay-title="Launch Terminal" { spawn-sh "launch-or-focus com.mitchellh.ghostty ghostty -e tmux"; }
     Mod+T hotkey-overlay-title="Launch Telegram" { spawn-sh "launch-or-focus org.telegram.desktop Telegram"; }
-    Mod+D hotkey-overlay-title="Launch Discord" { spawn-sh "launch-or-focus vesktop vesktop"; }
+    Mod+D hotkey-overlay-title="Launch Discord" { spawn-sh "launch-or-focus  discord com.discordapp.Discord"; }
     Mod+B hotkey-overlay-title="Launch Browser" { spawn-sh "launch-or-focus zen zen"; }
     Mod+Alt+K hotkey-overlay-title="Launch KeePassXC" { spawn-sh "launch-or-focus org.keepassxc.KeePassXC keepassxc"; }
     Mod+Alt+F hotkey-overlay-title="Launch Yazi" { spawn-sh "ghostty -e yazi"; }
