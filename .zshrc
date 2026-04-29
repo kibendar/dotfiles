@@ -62,8 +62,11 @@ plugins=(
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath=(~/ $fpath)
 source "$ZSH/oh-my-zsh.sh"
 
+autoload -Uz compinit
+compinit
 # ----------------------------------------------------------------------------
 # COMPLETION STYLING  (after compinit, which OMZ runs automatically)
 # ----------------------------------------------------------------------------
@@ -201,6 +204,7 @@ alias cc="claude --continue"
 alias mmdc='PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium mmdc'
 alias refl='sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias cli_ex="~/venv/bin/cliexercises"
+alias unfuck_wifi="sudo systemctl restart iwd"
 
 # ============================================================================
 # END OF CONFIGURATION
