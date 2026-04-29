@@ -17,16 +17,18 @@ stow .
 
 ## Overview
 
-| Tool                     | Purpose              | Theme            |
-| ------------------------ | -------------------- | ---------------- |
-| [Neovim](#-neovim)       | Editor               | Catppuccin Mocha |
-| [Zsh](#-zsh)             | Shell                | —                |
-| [Tmux](#-tmux)           | Terminal multiplexer | Catppuccin Mocha |
-| [Ghostty](#-ghostty)     | Terminal emulator    | Catppuccin Mocha |
-| [Lazygit](#-lazygit)     | Git TUI              | Catppuccin Mocha |
-| [btop](#-btop)           | System monitor       | Catppuccin Mocha |
-| [fastfetch](#-fastfetch) | System info          | —                |
-| [mpv](#-mpv)             | Media player         | Catppuccin Mocha |
+| Tool                               | Purpose              | Theme            |
+| ---------------------------------- | -------------------- | ---------------- |
+| [Neovim](#-neovim)                 | Editor               | Catppuccin Mocha |
+| [Zsh](#-zsh)                       | Shell                | —                |
+| [Tmux](#-tmux)                     | Terminal multiplexer | Kanagawa         |
+| [Ghostty](#-ghostty)               | Terminal emulator    | Noctalia         |
+| [Lazygit](#-lazygit)               | Git TUI              | Catppuccin Mocha |
+| [btop](#-btop)                     | System monitor       | Noctalia         |
+| [fastfetch](#-fastfetch)           | System info          | —                |
+| [mpv](#-mpv)                       | Media player         | —                |
+| [Niri](#-niri)                     | Wayland compositor   | Kanagawa         |
+| [Noctalia Shell](#-noctalia-shell) | Desktop shell        | Noctalia         |
 
 ---
 
@@ -39,13 +41,14 @@ Built on top of [LazyVim](https://www.lazyvim.org/) with heavily customized plug
 
 ### Theme & UI
 
-| Plugin            | Description                       |
-| ----------------- | --------------------------------- |
-| `catppuccin`      | Primary colorscheme (Mocha)       |
-| `lualine.nvim`    | Status line                       |
-| `bufferline.nvim` | Buffer tabs                       |
-| `neo-tree.nvim`   | File explorer                     |
-| `snacks.nvim`     | Collection of small QoL utilities |
+| Plugin            | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `catppuccin`      | Primary colorscheme (Mocha)                         |
+| `base16-nvim`     | Base16 colorscheme engine with `matugen` integration |
+| `lualine.nvim`    | Status line                                         |
+| `bufferline.nvim` | Buffer tabs                                         |
+| `neo-tree.nvim`   | File explorer                                       |
+| `snacks.nvim`     | Collection of small QoL utilities                   |
 
 ### LSP & Completion
 
@@ -247,7 +250,7 @@ Prefix key changed to `Ctrl+A`. All custom bindings use `Alt` so you never need 
 | `tmux-fzf-url`    | Pick & open URLs from pane       |
 | `tmux-floax`      | Floating scratch window          |
 | `tmux-sessionx`   | Enhanced session manager         |
-| `catppuccin-tmux` | Catppuccin Mocha theme           |
+| `catppuccin-tmux` | Statusbar structure; colors overridden with Kanagawa palette |
 
 </details>
 
@@ -260,7 +263,7 @@ GPU-accelerated terminal emulator with a custom cursor shader.
 | Setting           | Value                                |
 | ----------------- | ------------------------------------ |
 | Font              | JetBrainsMono Nerd Font, size 15     |
-| Theme             | Catppuccin Mocha                     |
+| Theme             | Noctalia                             |
 | Cursor            | Block with `cursor_warp.glsl` shader |
 | Window            | Maximized on launch                  |
 | Shell integration | Zsh                                  |
@@ -271,7 +274,7 @@ Seven cursor shaders are available in `.config/ghostty/shaders/` — swap by cha
 
 ## Lazygit
 
-Catppuccin Mocha color theme applied via the `gui.theme` block in `config.yml`.
+Catppuccin Mocha colors applied via manually specified hex values in the `gui.theme` block of `config.yml`.
 
 ---
 
@@ -279,7 +282,7 @@ Catppuccin Mocha color theme applied via the `gui.theme` block in `config.yml`.
 
 | Setting         | Value                        |
 | --------------- | ---------------------------- |
-| Theme           | Tokyo Night                  |
+| Theme           | Noctalia                     |
 | Graph symbols   | Braille (highest resolution) |
 | Update rate     | 2 000 ms                     |
 | Vim keybindings | Enabled                      |
@@ -311,6 +314,10 @@ Minimal config (fullscreen geometry) with a rich script layer:
 
 JetBrainsMono Nerd Font is used across all tools. Install it from [Nerd Fonts](https://www.nerdfonts.com/).
 
-## Color theme
+## Color themes
 
-[Catppuccin Mocha](https://github.com/catppuccin/catppuccin) is the unified theme across Neovim, Tmux, Ghostty, and Lazygit, Btop, MPV.
+Three theme families are in use:
+
+- **[Noctalia](https://github.com/noctalia/noctalia-shell)** — Ghostty and btop. The btop theme file (`.config/btop/themes/noctalia.theme`) is generated by the Noctalia project; no manual color definitions required.
+- **[Kanagawa](https://github.com/rebelot/kanagawa.nvim)** — Tmux (pane borders, copy mode, message styles, and status module color overrides all use the Kanagawa palette) and Niri window decorations.
+- **[Catppuccin Mocha](https://github.com/catppuccin/catppuccin)** — Neovim and Lazygit (hex values from the Catppuccin Mocha palette).
