@@ -52,11 +52,12 @@ function zvm_config() {
 #   fzf and thefuck are initialized via eval below — NOT as plugins
 plugins=(
     git
+    pass
+    docker
+    history
+    fzf-tab
     zsh-vi-mode
     zsh-autosuggestions
-    docker
-    fzf-tab
-    history
     zsh-syntax-highlighting
     zsh-history-substring-search
 )
