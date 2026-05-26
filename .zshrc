@@ -45,6 +45,14 @@ function zvm_config() {
   ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
   ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 }
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
 
 # Plugin load order matters:
 #   zsh-syntax-highlighting must come before zsh-history-substring-search
@@ -148,7 +156,7 @@ alias cat="bat"
 # ALIASES — EDITORS & NAVIGATION
 # ----------------------------------------------------------------------------
 alias v='nvim'
-alias y="yazi"
+# alias y="yazi"
 alias ff="fastfetch"
 alias brf='brrtfetch ~/Gifs/arch.gif -info "fastfetch --config ~/.config/brrtfetch/config_brf.jsonc" -width 20 -fps 17'
 
