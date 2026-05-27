@@ -46,6 +46,11 @@ application_default_credentials.json
 # Azure
 .azure/
 
+# ── Zsh secrets & cache ───────────────────────────────────────────────────────
+.config/zsh/secrets.zsh
+.config/zsh/.zcompdump*
+.config/zsh/.zsh_history
+
 # ── API tokens & secrets ──────────────────────────────────────────────────────
 .netrc
 .authinfo
