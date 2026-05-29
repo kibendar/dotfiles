@@ -28,4 +28,4 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # =========================================================
 # PATH
 # =========================================================
-export PATH="/usr/local/bin:$HOME/.local/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"

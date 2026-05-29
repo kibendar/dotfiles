@@ -1,3 +1,7 @@
+# ── tmux plugins (managed by TPM, not git) ───────────────────────────────────
+.config/tmux/plugins/*/
+!.config/tmux/plugins/tpm/
+
 # ── Environment variables ─────────────────────────────────────────────────────
 .env
 .env.*

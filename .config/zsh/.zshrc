@@ -30,6 +30,11 @@ setopt appendhistory sharehistory hist_ignore_space hist_ignore_all_dups \
 # ============================================================================
 # COMPLETION
 # ============================================================================
+fpath=(~/ $fpath)
+
+autoload -Uz compinit
+compinit
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview \
