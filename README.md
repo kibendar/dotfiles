@@ -25,13 +25,13 @@ sudo pacman -S git stow zsh tmux neovim btop mpv fastfetch fzf eza bat ripgrep \
   bluez bluez-utils bluez-deprecated-tools \
   qt6-declarative qt6-5compat qt6-svg qt6-multimedia qt6-multimedia-ffmpeg \
   gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly \
-  ttf-jetbrains-mono-nerd
+  ttf-jetbrains-mono-nerd television
 ```
 
 AUR packages:
 
 ```bash
-paru -S noctalia-shell zen-browser-bin localsend brrtfetch gowall television-bin
+paru -S noctalia-shell zen-browser-bin localsend-bin gowall
 ```
 
 ### 3. Install oh-my-zsh
@@ -46,7 +46,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-### 5. Install qylock
+### 5 Install tpm (tmux plugin manager)
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/.config/tmux/plugins/tpm/
+```
+
+### 6. Install qylock
 
 ```bash
 git clone https://github.com/Darkkal44/qylock.git
@@ -56,10 +62,10 @@ chmod +x quickshell.sh && ./quickshell.sh
 cd ..
 ```
 
-### 6. Clone and apply dotfiles
+### 7. Clone and apply dotfiles
 
 ```bash
-git clone git@github.com:dunkan/.dotfiles.git ~/.dotfiles
+git clone git@github.com:dunkan/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 stow .
 ```
