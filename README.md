@@ -4,9 +4,62 @@ Personal development environment managed with [GNU Stow](https://www.gnu.org/sof
 
 ## Setup
 
+### 1. Install paru
+
 ```bash
-sudo pacman -S git stow
-git clone https://github.com/dunkan/.dotfiles ~/.dotfiles
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru && makepkg -si && cd .. && rm -rf paru
+```
+
+### 2. Install packages
+
+Official repos:
+
+```bash
+sudo pacman -S git stow zsh tmux neovim btop mpv fastfetch fzf eza bat ripgrep \
+  yazi zoxide thefuck awww pass docker docker-compose keepassxc discord \
+  telegram-desktop reflector minicom playerctl brightnessctl wl-clipboard \
+  lazygit starship niri alacritty kitty ghostty timeshift sddm nodejs npm \
+  pipewire wireplumber pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack pavucontrol \
+  bluez bluez-utils bluez-deprecated-tools \
+  qt6-declarative qt6-5compat qt6-svg qt6-multimedia qt6-multimedia-ffmpeg \
+  gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly \
+  ttf-jetbrains-mono-nerd
+```
+
+AUR packages:
+
+```bash
+paru -S noctalia-shell zen-browser-bin localsend brrtfetch gowall television-bin
+```
+
+### 3. Install oh-my-zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### 4. Install Claude Code
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+### 5. Install qylock
+
+```bash
+git clone https://github.com/Darkkal44/qylock.git
+cd qylock
+chmod +x sddm.sh && ./sddm.sh
+chmod +x quickshell.sh && ./quickshell.sh
+cd ..
+```
+
+### 6. Clone and apply dotfiles
+
+```bash
+git clone git@github.com:dunkan/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 stow .
 ```
@@ -17,20 +70,20 @@ stow .
 
 ## Overview
 
-| Tool                               | Purpose                    | Theme            |
-| ---------------------------------- | -------------------------- | ---------------- |
-| [Niri](#-niri)                     | Wayland compositor         | Kanagawa         |
-| [Noctalia Shell](#-noctalia-shell) | Desktop shell              | Noctalia         |
-| [Ghostty](#-ghostty)               | Terminal emulator          | Noctalia         |
-| [Tmux](#-tmux)                     | Terminal multiplexer       | Kanagawa         |
-| [Zsh](#-zsh)                       | Shell                      | —                |
-| [Neovim](#-neovim)                 | Editor                     | Catppuccin Mocha |
-| [Lazygit](#-lazygit)               | Git TUI                    | Catppuccin Mocha |
-| [btop](#-btop)                     | System monitor             | Noctalia         |
-| [mpv](#-mpv)                       | Media player               | Catppuccin Mocha |
-| [fastfetch](#-fastfetch)           | System info                | —                |
-| [brrtfetch](#-brrtfetch)           | Animated system info       | —                |
-| [gowall](#-gowall)                 | Wallpaper recolor          | Kanagawa Paper   |
+| Tool                               | Purpose              | Theme            |
+| ---------------------------------- | -------------------- | ---------------- |
+| [Niri](#-niri)                     | Wayland compositor   | Kanagawa         |
+| [Noctalia Shell](#-noctalia-shell) | Desktop shell        | Noctalia         |
+| [Ghostty](#-ghostty)               | Terminal emulator    | Noctalia         |
+| [Tmux](#-tmux)                     | Terminal multiplexer | Kanagawa         |
+| [Zsh](#-zsh)                       | Shell                | —                |
+| [Neovim](#-neovim)                 | Editor               | Catppuccin Mocha |
+| [Lazygit](#-lazygit)               | Git TUI              | Catppuccin Mocha |
+| [btop](#-btop)                     | System monitor       | Noctalia         |
+| [mpv](#-mpv)                       | Media player         | Catppuccin Mocha |
+| [fastfetch](#-fastfetch)           | System info          | —                |
+| [brrtfetch](#-brrtfetch)           | Animated system info | —                |
+| [gowall](#-gowall)                 | Wallpaper recolor    | Kanagawa Paper   |
 
 ---
 
@@ -45,28 +98,28 @@ Window rules auto-route apps by `app-id`: terminals and editors → development,
 <details>
 <summary><strong>Layout & visuals</strong></summary>
 
-| Setting          | Value                                         |
-| ---------------- | --------------------------------------------- |
-| Gaps             | 8 px                                          |
-| Default width    | 50 % of workspace                             |
-| Preset widths    | 33 % / 50 % / 66 %                            |
-| Focus ring       | Active gradient `#98BB6C → #7AA89F` at 45°    |
-| Shadow           | Enabled, softness 30, spread 5, offset Y +5   |
-| Corner radius    | 8 px                                          |
-| Animations       | Spring physics (workspace/movement), ease-out-expo (open/close) |
+| Setting       | Value                                                           |
+| ------------- | --------------------------------------------------------------- |
+| Gaps          | 8 px                                                            |
+| Default width | 50 % of workspace                                               |
+| Preset widths | 33 % / 50 % / 66 %                                              |
+| Focus ring    | Active gradient `#98BB6C → #7AA89F` at 45°                      |
+| Shadow        | Enabled, softness 30, spread 5, offset Y +5                     |
+| Corner radius | 8 px                                                            |
+| Animations    | Spring physics (workspace/movement), ease-out-expo (open/close) |
 
 </details>
 
 <details>
 <summary><strong>Input</strong></summary>
 
-| Setting              | Value                              |
-| -------------------- | ---------------------------------- |
-| Keyboard layouts     | `us`, `ru`, `ua` — toggle `Win+Space` |
-| Key repeat           | Rate 35, delay 200 ms              |
-| Touchpad             | Tap, DWT, natural scroll           |
-| Focus follows mouse  | Yes (0 % scroll amount)            |
-| Mouse warp           | On focus change                    |
+| Setting             | Value                                 |
+| ------------------- | ------------------------------------- |
+| Keyboard layouts    | `us`, `ru`, `ua` — toggle `Win+Space` |
+| Key repeat          | Rate 35, delay 200 ms                 |
+| Touchpad            | Tap, DWT, natural scroll              |
+| Focus follows mouse | Yes (0 % scroll amount)               |
+| Mouse warp          | On focus change                       |
 
 </details>
 
@@ -75,65 +128,65 @@ Window rules auto-route apps by `app-id`: terminals and editors → development,
 
 ### Apps
 
-| Keys               | Action                        |
-| ------------------ | ----------------------------- |
-| `Mod+Return`       | Launch / focus Ghostty+Tmux   |
-| `Mod+B`            | Launch / focus Zen browser    |
-| `Mod+T`            | Launch / focus Telegram       |
-| `Mod+D`            | Launch / focus Discord        |
-| `Mod+Alt+F`        | Launch Yazi in Ghostty        |
-| `Mod+Alt+K`        | Launch KeePassXC              |
-| `Mod+Alt+D`        | Launch LocalSend              |
-| `Mod+Alt+C`        | Open Niri config dir in Nvim  |
+| Keys         | Action                       |
+| ------------ | ---------------------------- |
+| `Mod+Return` | Launch / focus Ghostty+Tmux  |
+| `Mod+B`      | Launch / focus Zen browser   |
+| `Mod+T`      | Launch / focus Telegram      |
+| `Mod+D`      | Launch / focus Discord       |
+| `Mod+Alt+F`  | Launch Yazi in Ghostty       |
+| `Mod+Alt+K`  | Launch KeePassXC             |
+| `Mod+Alt+D`  | Launch LocalSend             |
+| `Mod+Alt+C`  | Open Niri config dir in Nvim |
 
 ### Focus & movement
 
-| Keys                        | Action                       |
-| --------------------------- | ---------------------------- |
-| `Mod+H/J/K/L`               | Focus column / workspace     |
-| `Mod+Ctrl+H/J/K/L`          | Move column / to workspace   |
-| `Mod+Shift+H/J/K/L`         | Focus monitor                |
-| `Mod+Shift+Ctrl+H/J/K/L`    | Move column to monitor       |
-| `Mod+1–9`                   | Focus workspace              |
-| `Mod+Shift+1–4`             | Move column to named workspace |
+| Keys                     | Action                         |
+| ------------------------ | ------------------------------ |
+| `Mod+H/J/K/L`            | Focus column / workspace       |
+| `Mod+Ctrl+H/J/K/L`       | Move column / to workspace     |
+| `Mod+Shift+H/J/K/L`      | Focus monitor                  |
+| `Mod+Shift+Ctrl+H/J/K/L` | Move column to monitor         |
+| `Mod+1–9`                | Focus workspace                |
+| `Mod+Shift+1–4`          | Move column to named workspace |
 
 ### Window manipulation
 
-| Keys              | Action                            |
-| ----------------- | --------------------------------- |
-| `Mod+Q`           | Close window                      |
-| `Mod+V`           | Toggle floating                   |
-| `Mod+W`           | Toggle tabbed column              |
-| `Mod+F`           | Maximize column                   |
-| `Mod+Shift+F`     | Fullscreen window                 |
-| `Mod+C`           | Center column                     |
-| `Mod+R`           | Cycle preset column widths        |
-| `Mod+- / Mod+=`   | Shrink / grow column width        |
-| `Mod+,`           | Consume window into column        |
-| `Mod+.`           | Expel window from column          |
-| `Mod+O`           | Toggle overview                   |
+| Keys            | Action                     |
+| --------------- | -------------------------- |
+| `Mod+Q`         | Close window               |
+| `Mod+V`         | Toggle floating            |
+| `Mod+W`         | Toggle tabbed column       |
+| `Mod+F`         | Maximize column            |
+| `Mod+Shift+F`   | Fullscreen window          |
+| `Mod+C`         | Center column              |
+| `Mod+R`         | Cycle preset column widths |
+| `Mod+- / Mod+=` | Shrink / grow column width |
+| `Mod+,`         | Consume window into column |
+| `Mod+.`         | Expel window from column   |
+| `Mod+O`         | Toggle overview            |
 
 ### Screenshots
 
-| Keys           | Action             |
-| -------------- | ------------------ |
-| `Mod+Shift+S`  | Region screenshot  |
-| `Mod+Ctrl+S`   | Full screen        |
-| `Mod+Alt+S`    | Window screenshot  |
+| Keys          | Action            |
+| ------------- | ----------------- |
+| `Mod+Shift+S` | Region screenshot |
+| `Mod+Ctrl+S`  | Full screen       |
+| `Mod+Alt+S`   | Window screenshot |
 
 ### Media & system
 
-| Keys                       | Action               |
-| -------------------------- | -------------------- |
-| `XF86AudioRaiseVolume`     | Volume +10 %         |
-| `XF86AudioLowerVolume`     | Volume −10 %         |
-| `XF86AudioMute`            | Toggle mute          |
-| `XF86AudioMicMute`         | Toggle mic mute      |
-| `XF86AudioPlay`            | Play / pause         |
-| `XF86AudioPrev/Next`       | Previous / next      |
-| `XF86MonBrightnessUp/Down` | Brightness ±10 %     |
-| `Mod+Shift+E`              | Quit Niri            |
-| `Mod+Shift+P`              | Power off monitors   |
+| Keys                       | Action             |
+| -------------------------- | ------------------ |
+| `XF86AudioRaiseVolume`     | Volume +10 %       |
+| `XF86AudioLowerVolume`     | Volume −10 %       |
+| `XF86AudioMute`            | Toggle mute        |
+| `XF86AudioMicMute`         | Toggle mic mute    |
+| `XF86AudioPlay`            | Play / pause       |
+| `XF86AudioPrev/Next`       | Previous / next    |
+| `XF86MonBrightnessUp/Down` | Brightness ±10 %   |
+| `Mod+Shift+E`              | Quit Niri          |
+| `Mod+Shift+P`              | Power off monitors |
 
 </details>
 
@@ -146,19 +199,19 @@ Window rules auto-route apps by `app-id`: terminals and editors → development,
 <details>
 <summary><strong>Key bindings</strong></summary>
 
-| Keys                   | Action                |
-| ---------------------- | --------------------- |
-| `Mod+Shift+D`          | App launcher          |
-| `Mod+Shift+C`          | Control center        |
-| `Mod+Shift+N`          | Notification history  |
-| `Mod+Shift+W`          | Network panel         |
-| `Mod+Shift+B`          | Bluetooth panel       |
-| `Mod+Shift+M`          | Session menu          |
-| `Mod+S`                | Settings              |
-| `Mod+P`                | Screen toolkit        |
-| `Mod+Alt+L`            | Lock screen           |
-| `Mod+Alt+Ctrl+Shift+S` | Screen recorder       |
-| `Mod+Shift+/`          | Keybind cheatsheet    |
+| Keys                   | Action               |
+| ---------------------- | -------------------- |
+| `Mod+Shift+D`          | App launcher         |
+| `Mod+Shift+C`          | Control center       |
+| `Mod+Shift+N`          | Notification history |
+| `Mod+Shift+W`          | Network panel        |
+| `Mod+Shift+B`          | Bluetooth panel      |
+| `Mod+Shift+M`          | Session menu         |
+| `Mod+S`                | Settings             |
+| `Mod+P`                | Screen toolkit       |
+| `Mod+Alt+L`            | Lock screen          |
+| `Mod+Alt+Ctrl+Shift+S` | Screen recorder      |
+| `Mod+Shift+/`          | Keybind cheatsheet   |
 
 </details>
 
@@ -168,14 +221,14 @@ Window rules auto-route apps by `app-id`: terminals and editors → development,
 
 GPU-accelerated terminal emulator with a custom cursor shader.
 
-| Setting           | Value                                |
-| ----------------- | ------------------------------------ |
-| Theme             | Noctalia                             |
-| Font              | JetBrainsMono Nerd Font, size 15     |
-| Background opacity| 0.90                                 |
-| Cursor            | Block + `cursor_warp.glsl` shader    |
-| Shell integration | Zsh                                  |
-| Keybinds          | `Ctrl+Q` quit · `Shift+Enter` paste  |
+| Setting            | Value                               |
+| ------------------ | ----------------------------------- |
+| Theme              | Noctalia                            |
+| Font               | JetBrainsMono Nerd Font, size 15    |
+| Background opacity | 0.90                                |
+| Cursor             | Block + `cursor_warp.glsl` shader   |
+| Shell integration  | Zsh                                 |
+| Keybinds           | `Ctrl+Q` quit · `Shift+Enter` paste |
 
 Seven cursor shaders available in `.config/ghostty/shaders/` — swap via `custom-shader` in config.
 
@@ -241,18 +294,18 @@ Theme uses the `catppuccin-tmux` plugin for statusbar structure, with all colors
 <details>
 <summary><strong>Plugins</strong></summary>
 
-| Plugin            | Description                                             |
-| ----------------- | ------------------------------------------------------- |
-| `tpm`             | Plugin manager                                          |
-| `tmux-sensible`   | Sensible defaults                                       |
-| `tmux-yank`       | Copy to system clipboard                                |
-| `tmux-resurrect`  | Save & restore sessions                                 |
-| `tmux-continuum`  | Auto-save sessions every 15 min                         |
-| `tmux-thumbs`     | Hint-based link/path picking                            |
-| `tmux-fzf`        | FZF session/window/pane switcher                        |
-| `tmux-fzf-url`    | Pick & open URLs from pane                              |
-| `tmux-floax`      | Floating scratch window (Kanagawa colors)               |
-| `tmux-sessionx`   | Enhanced session manager                                |
+| Plugin            | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| `tpm`             | Plugin manager                                               |
+| `tmux-sensible`   | Sensible defaults                                            |
+| `tmux-yank`       | Copy to system clipboard                                     |
+| `tmux-resurrect`  | Save & restore sessions                                      |
+| `tmux-continuum`  | Auto-save sessions every 15 min                              |
+| `tmux-thumbs`     | Hint-based link/path picking                                 |
+| `tmux-fzf`        | FZF session/window/pane switcher                             |
+| `tmux-fzf-url`    | Pick & open URLs from pane                                   |
+| `tmux-floax`      | Floating scratch window (Kanagawa colors)                    |
+| `tmux-sessionx`   | Enhanced session manager                                     |
 | `catppuccin-tmux` | Statusbar structure; colors overridden with Kanagawa palette |
 
 </details>
@@ -266,17 +319,17 @@ Oh My Zsh with a curated plugin set, split across files in `.config/zsh/`. Promp
 <details>
 <summary><strong>Plugins</strong></summary>
 
-| Plugin                         | Description                     |
-| ------------------------------ | ------------------------------- |
-| `fzf-tab`                      | Replace tab-completion with fzf |
-| `zsh-vi-mode`                  | Vi keybindings in the shell     |
-| `zsh-autosuggestions`          | Fish-like inline suggestions    |
-| `zsh-syntax-highlighting`      | Command syntax coloring         |
-| `zsh-history-substring-search` | History search with up/down     |
-| `git`                          | Git aliases                     |
-| `pass`                         | Pass password manager completion|
-| `docker`                       | Docker aliases & completion     |
-| `history`                      | History aliases                 |
+| Plugin                         | Description                      |
+| ------------------------------ | -------------------------------- |
+| `fzf-tab`                      | Replace tab-completion with fzf  |
+| `zsh-vi-mode`                  | Vi keybindings in the shell      |
+| `zsh-autosuggestions`          | Fish-like inline suggestions     |
+| `zsh-syntax-highlighting`      | Command syntax coloring          |
+| `zsh-history-substring-search` | History search with up/down      |
+| `git`                          | Git aliases                      |
+| `pass`                         | Pass password manager completion |
+| `docker`                       | Docker aliases & completion      |
+| `history`                      | History aliases                  |
 
 **Additional integrations:** `zoxide` (smart `cd`), `thefuck` (auto-correct), `fzf`, `tv` (Television file picker).
 
@@ -285,25 +338,25 @@ Oh My Zsh with a curated plugin set, split across files in `.config/zsh/`. Promp
 <details>
 <summary><strong>Aliases & tool replacements</strong></summary>
 
-| Alias   | Expands to                      | Tool                                                |
-| ------- | ------------------------------- | --------------------------------------------------- |
-| `ls`    | `eza --icons`                   | [eza](https://github.com/eza-community/eza)         |
-| `ll`    | `eza --tree --level=1 -la`      | eza                                                 |
-| `la`    | `eza -lah --icons --git`        | eza                                                 |
-| `tree`  | `eza --tree --icons`            | eza                                                 |
-| `cat`   | `bat`                           | [bat](https://github.com/sharkdp/bat)               |
-| `grep`  | `rg --color=auto`               | [ripgrep](https://github.com/BurntSushi/ripgrep)    |
-| `v`     | `nvim`                          | Neovim                                              |
-| `lg`    | `lazygit`                       | Lazygit                                             |
-| `y`     | yazi wrapper (cd-on-exit)       | [Yazi](https://github.com/sxyazi/yazi)              |
-| `ff`    | `fastfetch`                     | Fastfetch                                           |
-| `brf`   | `brrtfetch ~/Gifs/arch.gif …`   | brrtfetch                                           |
-| `t`     | `tmux`                          | Tmux                                                |
-| `c`     | `claude`                        | Claude Code CLI                                     |
-| `cc`    | `claude --continue`             | Claude Code CLI (continue session)                  |
-| `tvc`   | `tv channels`                   | Television                                          |
-| `p`     | `python3`                       | Python                                              |
-| `g`     | `git`                           | Git                                                 |
+| Alias  | Expands to                    | Tool                                             |
+| ------ | ----------------------------- | ------------------------------------------------ |
+| `ls`   | `eza --icons`                 | [eza](https://github.com/eza-community/eza)      |
+| `ll`   | `eza --tree --level=1 -la`    | eza                                              |
+| `la`   | `eza -lah --icons --git`      | eza                                              |
+| `tree` | `eza --tree --icons`          | eza                                              |
+| `cat`  | `bat`                         | [bat](https://github.com/sharkdp/bat)            |
+| `grep` | `rg --color=auto`             | [ripgrep](https://github.com/BurntSushi/ripgrep) |
+| `v`    | `nvim`                        | Neovim                                           |
+| `lg`   | `lazygit`                     | Lazygit                                          |
+| `y`    | yazi wrapper (cd-on-exit)     | [Yazi](https://github.com/sxyazi/yazi)           |
+| `ff`   | `fastfetch`                   | Fastfetch                                        |
+| `brf`  | `brrtfetch ~/Gifs/arch.gif …` | brrtfetch                                        |
+| `t`    | `tmux`                        | Tmux                                             |
+| `c`    | `claude`                      | Claude Code CLI                                  |
+| `cc`   | `claude --continue`           | Claude Code CLI (continue session)               |
+| `tvc`  | `tv channels`                 | Television                                       |
+| `p`    | `python3`                     | Python                                           |
+| `g`    | `git`                         | Git                                              |
 
 </details>
 
@@ -333,14 +386,14 @@ Built on top of [LazyVim](https://www.lazyvim.org/) with heavily customized plug
 
 ### Theme & UI
 
-| Plugin            | Description                                          |
-| ----------------- | ---------------------------------------------------- |
-| `catppuccin`      | Primary colorscheme (Mocha)                          |
-| `base16-nvim`     | Base16 engine with optional `matugen` integration    |
-| `lualine.nvim`    | Status line                                          |
-| `bufferline.nvim` | Buffer tabs                                          |
-| `neo-tree.nvim`   | File explorer                                        |
-| `snacks.nvim`     | Collection of small QoL utilities                    |
+| Plugin            | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| `catppuccin`      | Primary colorscheme (Mocha)                       |
+| `base16-nvim`     | Base16 engine with optional `matugen` integration |
+| `lualine.nvim`    | Status line                                       |
+| `bufferline.nvim` | Buffer tabs                                       |
+| `neo-tree.nvim`   | File explorer                                     |
+| `snacks.nvim`     | Collection of small QoL utilities                 |
 
 ### LSP & Completion
 
@@ -359,10 +412,10 @@ Formatters: Black, Prettier, Biome. Linter: ESLint. LSP extras: neoconf, none-ls
 
 ### Debugging & Testing
 
-| Plugin                             | Description            |
-| ---------------------------------- | ---------------------- |
-| `nvim-dap` + `nvim-dap-ui`         | Debug Adapter Protocol |
-| `neotest`                          | Test runner framework  |
+| Plugin                     | Description            |
+| -------------------------- | ---------------------- |
+| `nvim-dap` + `nvim-dap-ui` | Debug Adapter Protocol |
+| `neotest`                  | Test runner framework  |
 
 ### Navigation & Editing
 
@@ -441,11 +494,11 @@ The `noctalia.theme` file at `.config/btop/themes/` is generated by the Noctalia
 
 Full-featured media player config with vi-style bindings and a rich script + shader layer.
 
-| Setting    | Value                             |
-| ---------- | --------------------------------- |
-| Geometry   | 100 % × 100 % (fullscreen)        |
-| OSD colors | Catppuccin Mocha palette          |
-| UI         | uosc (Catppuccin Mocha colors)    |
+| Setting    | Value                          |
+| ---------- | ------------------------------ |
+| Geometry   | 100 % × 100 % (fullscreen)     |
+| OSD colors | Catppuccin Mocha palette       |
+| UI         | uosc (Catppuccin Mocha colors) |
 
 <details>
 <summary><strong>Scripts</strong></summary>
@@ -466,48 +519,48 @@ Full-featured media player config with vi-style bindings and a rich script + sha
 <details>
 <summary><strong>Shader profiles</strong></summary>
 
-| Profile         | Description                       |
-| --------------- | --------------------------------- |
-| `FSRCNNX`       | HD live-action upscaling          |
-| `FSRCNNX+`      | SD live-action (nnedi3 + F16)     |
-| `Ravu-Zoom`     | General-purpose AR upscaling      |
-| `Ani4k`         | Anime 4K (ArtCNN)                 |
-| `AniSD`         | SD anime (ArtCNN)                 |
-| `Anime4K`       | Anime (Krigbl + A4K pipeline)     |
-| `NNEDI3`        | NNEDI3 32 + sharpen               |
-| `NNEDI3+`       | NNEDI3 64 + sharpen               |
-| `Deband-Medium` | Deband medium strength            |
-| `Deband-Strong` | Deband strong                     |
-| `HDR`           | HDR passthrough (BT.2020 / PQ)    |
-| `4k-Downscaling`| SSim downscale for 4K sources     |
-| `Downmix-5.1`   | 5.1 → stereo downmix              |
-| `Downmix-7.1`   | 7.1 → stereo downmix              |
+| Profile          | Description                    |
+| ---------------- | ------------------------------ |
+| `FSRCNNX`        | HD live-action upscaling       |
+| `FSRCNNX+`       | SD live-action (nnedi3 + F16)  |
+| `Ravu-Zoom`      | General-purpose AR upscaling   |
+| `Ani4k`          | Anime 4K (ArtCNN)              |
+| `AniSD`          | SD anime (ArtCNN)              |
+| `Anime4K`        | Anime (Krigbl + A4K pipeline)  |
+| `NNEDI3`         | NNEDI3 32 + sharpen            |
+| `NNEDI3+`        | NNEDI3 64 + sharpen            |
+| `Deband-Medium`  | Deband medium strength         |
+| `Deband-Strong`  | Deband strong                  |
+| `HDR`            | HDR passthrough (BT.2020 / PQ) |
+| `4k-Downscaling` | SSim downscale for 4K sources  |
+| `Downmix-5.1`    | 5.1 → stereo downmix           |
+| `Downmix-7.1`    | 7.1 → stereo downmix           |
 
 </details>
 
 <details>
 <summary><strong>Key bindings</strong></summary>
 
-| Keys        | Action                     |
-| ----------- | -------------------------- |
-| `h/l`       | Seek −5 s / +5 s           |
-| `H/L`       | Seek −10 s / +10 s         |
-| `j/k`       | Seek −60 s / +60 s         |
-| `J/K`       | Seek −5 min / +5 min       |
-| `=/−`       | Volume +2 / −2             |
-| `>/< `      | Speed ×1.1 / ×0.9          |
-| `0`         | Reset speed                |
-| `n/N`       | Playlist next / prev       |
-| `./,`       | Frame step / back          |
-| `v/V`       | Cycle subtitles            |
-| `a`         | Cycle audio track          |
-| `s/S`       | Screenshot (with/without sub) |
-| `TAB`       | Toggle uosc UI             |
-| `/`         | Open mpv console           |
-| `Ctrl+1–8`  | Apply shader profile       |
-| `c`         | Clear all shaders          |
-| `F1`        | Toggle loudnorm filter     |
-| `q/Q`       | Quit / quit-watch-later    |
+| Keys       | Action                        |
+| ---------- | ----------------------------- |
+| `h/l`      | Seek −5 s / +5 s              |
+| `H/L`      | Seek −10 s / +10 s            |
+| `j/k`      | Seek −60 s / +60 s            |
+| `J/K`      | Seek −5 min / +5 min          |
+| `=/−`      | Volume +2 / −2                |
+| `>/<`      | Speed ×1.1 / ×0.9             |
+| `0`        | Reset speed                   |
+| `n/N`      | Playlist next / prev          |
+| `./,`      | Frame step / back             |
+| `v/V`      | Cycle subtitles               |
+| `a`        | Cycle audio track             |
+| `s/S`      | Screenshot (with/without sub) |
+| `TAB`      | Toggle uosc UI                |
+| `/`        | Open mpv console              |
+| `Ctrl+1–8` | Apply shader profile          |
+| `c`        | Clear all shaders             |
+| `F1`       | Toggle loudnorm filter        |
+| `q/Q`      | Quit / quit-watch-later       |
 
 </details>
 
@@ -530,10 +583,10 @@ Animated GIF system info widget — plays `~/Gifs/arch.gif` alongside a trimmed 
 
 [gowall](https://github.com/Achno/gowall) recolors wallpapers to match a defined palette. Two Kanagawa Paper themes are configured in `.config/gowall/config.yml`:
 
-| Theme                 | Palette            |
-| --------------------- | ------------------ |
-| `kanagawa-paper-dark` | Kanagawa Paper dark tones |
-| `kanagawa-paper-light`| Kanagawa Paper light tones |
+| Theme                  | Palette                    |
+| ---------------------- | -------------------------- |
+| `kanagawa-paper-dark`  | Kanagawa Paper dark tones  |
+| `kanagawa-paper-light` | Kanagawa Paper light tones |
 
 Current wallpaper: `yggdrasil-tree-kanagawa_paper_HQ.png` (set via `swaybg` at startup).
 
