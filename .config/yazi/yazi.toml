@@ -1,0 +1,15 @@
+[plugin]
+prepend_preloaders = [
+    { mime = "{audio,video,image}/*", run = "mediainfo" },
+    { mime = "application/subrip",    run = "mediainfo" },
+]
+
+prepend_previewers = [
+    { url  = "*.md",                                    run = "glow"      },
+    { url  = "*.{csv,tsv,json,parquet,xlsx,duckdb,db}", run = "duckdb"    },
+    { mime = "{audio,video,image}/*",                   run = "mediainfo" },
+    { mime = "application/subrip",                      run = "mediainfo" },
+]
+
+[tasks]
+image_alloc = 1073741824

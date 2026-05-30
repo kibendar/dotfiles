@@ -1,3 +1,4 @@
 spawn-sh-at-startup "qs -c noctalia-shell"
-spawn-at-startup "zen"
+spawn-sh-at-startup "awww-daemon & sleep 1; awww img $HOME/Pictures/Wallpapers/watchtower_mountains_and_forests_kanagawa.jpg"
 spawn-sh-at-startup "ghostty -e tmux"
+spawn-at-startup "zen"

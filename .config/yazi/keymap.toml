@@ -1,0 +1,8 @@
+[manager]
+prepend_keymap = [
+    { on = ["C"],     run = "plugin ouch",                   desc = "Compress with ouch"                },
+    { on = "o",       run = "plugin open-with-cmd -- block", desc = "Open with command in the terminal" },
+    { on = "O",       run = "plugin open-with-cmd",          desc = "Open with command"                 },
+    { on = ["<C-e>"], run = "seek 5",                        desc = "Scroll preview down (glow)"        },
+    { on = ["<C-y>"], run = "seek -5",                       desc = "Scroll preview up (glow)"          },
+]
