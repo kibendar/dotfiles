@@ -40,3 +40,18 @@ map("x", ";", ":")
 map("x", "<leader>tv", "<CMD>Translate RU<CR>", { desc = "Translate highlighted text" })
 
 map("n", "<leader>sA", "<cmd>SpellAddAll<cr>", { desc = "Spell: Add all to spellfile" })
+
+-- Smart zg: detect language by Cyrillic script and route to the correct spell file.
+-- Spellfile order: 1=en.utf-8.add  2=uk.utf-8.add  3=ru.utf-8.add
+map("n", "zg", function()
+  local word = vim.fn.expand("<cword>")
+  if vim.fn.matchstr(word, "[іїєґІЇЄҐ]") ~= "" then
+    -- Ukrainian-specific letters found
+    vim.cmd("normal! 2zg")
+  elseif vim.fn.matchstr(word, "[а-яА-Я]") ~= "" then
+    -- Cyrillic (Russian-specific or ambiguous) — default to Russian
+    vim.cmd("normal! 3zg")
+  else
+    vim.cmd("normal! zg")
+  end
+end, { desc = "Spell: Add word to correct language file" })

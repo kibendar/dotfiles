@@ -3,6 +3,13 @@
 -- Add any additional options here
 --
 
+vim.opt.spelllang = { "en", "uk", "ru" }
+vim.opt.spellfile = {
+  vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
+  vim.fn.stdpath("config") .. "/spell/uk.utf-8.add",
+  vim.fn.stdpath("config") .. "/spell/ru.utf-8.add",
+}
+
 vim.opt.guicursor = table.concat({
   "n-v-c:block", -- Normal/Visual/Command: solid block
   "i-ci-ve:blinkon1-blinkoff1-blinkwait1-block-Cursor", -- Insert: blinking block
