@@ -163,7 +163,7 @@ binds {
     Mod+W { toggle-column-tabbed-display; }
 
     // Screenshots
-    Mod+Shift+S  { screenshot; }
+    Mod+Shift+S  { spawn-sh "flameshot gui"; }
     Mod+Ctrl+S   { screenshot-screen; }
     Mod+Alt+S    { screenshot-window; }
 
