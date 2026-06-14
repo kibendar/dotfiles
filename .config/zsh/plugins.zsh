@@ -1,15 +1,16 @@
 # OMZ plugin list — loaded by oh-my-zsh.sh in .zshrc
 # Rules: fzf-tab must be first, zsh-syntax-highlighting must be last
 plugins=(
+    fzf-tab
     git
     pass
     docker
     history
-    fzf-tab
+    aliases
     zsh-vi-mode
     zsh-autosuggestions
-    zsh-syntax-highlighting
     zsh-history-substring-search
+    zsh-syntax-highlighting
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
