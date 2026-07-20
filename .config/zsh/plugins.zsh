@@ -5,12 +5,19 @@ plugins=(
     git
     pass
     docker
+    docker-compose
+    npm
+    kubectl
+    aws
+    web-search
+    thefuck
+    virtualenv
     history
     aliases
     zsh-vi-mode
     zsh-autosuggestions
     zsh-history-substring-search
-    zsh-syntax-highlighting
+    fast-syntax-highlighting
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src

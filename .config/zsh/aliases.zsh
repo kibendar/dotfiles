@@ -24,7 +24,6 @@ alias grep='rg --color=auto'
 alias diff='diff --color=auto'
 alias df='df -h'
 alias -- -='cd -'
-alias rzsh="exec zsh"
 
 # =========================================================
 # Editor
@@ -94,6 +93,7 @@ alias unfuck_wifi="sudo systemctl restart iwd"
 alias hub_log_1='minicom -o -D /dev/ttyUSB0'
 alias hub_log_2='minicom -o -D /dev/ttyUSB1'
 alias rzsh="exec zsh"
+alias rkanata="sudo systemctl restart kanata.service"
 
 # =========================================================
 # Shell utilities

@@ -26,7 +26,7 @@ local function java_template()
     table.insert(lines, "")
   end
 
-  table.insert(lines, "public class " .. filename .. " {")
+  table.insert(lines, "class " .. filename .. " {")
   table.insert(lines, "")
   table.insert(lines, "}")
 

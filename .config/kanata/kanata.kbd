@@ -51,17 +51,19 @@
   j down
   l rght
 
+  b bspc ;; backspace
+
   , C-S-tab ;; previous tab
   . C-tab ;; next tab
 
-  m home
-  n end
+  p home ;; start page
+  n end ;; end page
 
-  r C-. ;; paste
-  t C-i ;; yank/copy
-  f C-/ ;; undo
-  b C-b ;; cut
+  v C-v ;; paste
+  c C-c ;; yank/copy
+  z C-z ;; undo
+  x C-x ;; cut
 
   a tab
-  ; ret
+  ; ret ;; enter
 )

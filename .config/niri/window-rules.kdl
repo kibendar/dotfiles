@@ -11,7 +11,7 @@ window-rule {
 
 // Development: terminals
 window-rule {
-    match app-id=r#"^(com\.mitchellh\.ghostty|org\.gnome\.Terminal|com\.raggesilver\.BlackBox|foot|footclient|kitty|alacritty|wezterm|org\.wezfurlong\.wezterm|tilix|org\.gnome\.Tilix|xterm|urxvt|rxvt-unicode|st|termite|konsole|org\.kde\.konsole|yakuake|org\.kde\.yakuake|xfce4-terminal|org\.xfce\.terminal|lxterminal|cool-retro-term|hyper|tabby|contour|rio)$"#
+    match app-id=r#"^(com\.mitchellh\.ghostty|org\.gnome\.Terminal|com\.raggesilver\.BlackBox|foot|footclient|kitty|Alacritty|wezterm|org\.wezfurlong\.wezterm|tilix|org\.gnome\.Tilix|xterm|urxvt|rxvt-unicode|st|termite|konsole|org\.kde\.konsole|yakuake|org\.kde\.yakuake|xfce4-terminal|org\.xfce\.terminal|lxterminal|cool-retro-term|hyper|tabby|contour|rio)$"#
     open-on-workspace "development"
 }
 
