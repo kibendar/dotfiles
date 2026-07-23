@@ -114,5 +114,24 @@ alias -s ts="$EDITOR"
 alias -s js="$EDITOR"
 alias -s go="$EDITOR"
 alias -s md="bat"
+alias -s txt="bat"
+alias -s log="bat"
 alias -s json="jless"
 alias -s yaml="bat -l yaml"
+alias -s png="open"
+alias -s img="open"
+alias -s pdf="open"
+alias -s html="open"
+
+# =========================================================
+# Helpful aliases for zmv
+# =========================================================
+alias zcp='zmv -C'  # Copy with patterns
+alias zln='zmv -L'  # Link with patterns
+# =========================================================
+# Directories
+# =========================================================
+
+alias dot="cd $HOME/.dotfiles"
+alias dl="cd $HOME/Downloads"
+alias nt="cd $HOME/Notes"
