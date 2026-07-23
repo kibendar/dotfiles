@@ -18,3 +18,7 @@ function zvm_after_init() {
   bindkey '^n' history-substring-search-forward
   bindkey '^f' autosuggest-accept
 }
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
