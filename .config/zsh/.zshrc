@@ -14,6 +14,7 @@ ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 source "${ZDOTDIR}/plugins.zsh"
 source "${ZDOTDIR}/fzf.zsh"
 source "${ZDOTDIR}/bindings.zsh"
+source "${ZDOTDIR}/widgets.zsh"
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -34,6 +35,9 @@ fpath=(~/ $fpath)
 
 autoload -Uz compinit
 compinit
+autoload -Uz edit-command-line
+autoload -Uz add-zsh-hook
+autoload -Uz zmv
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu no
@@ -50,4 +54,5 @@ compdef _files java
 source "${ZDOTDIR}/aliases.zsh"
 source "${ZDOTDIR}/devs.zsh"
 source "${ZDOTDIR}/prompt.zsh"
+source "${ZDOTDIR}/chpwd.zsh"
 [[ -f "${ZDOTDIR}/secrets.zsh" ]] && source "${ZDOTDIR}/secrets.zsh"
