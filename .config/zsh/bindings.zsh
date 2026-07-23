@@ -19,6 +19,14 @@ function zvm_after_init() {
   bindkey '^f' autosuggest-accept
 }
 
-autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
+
+bindkey ' ' magic-space
+
+bindkey -s '^Xgc' 'git commit -m ""\C-b'
+bindkey -s '^Xgp' 'git push origin '
+bindkey -s '^Xgs' 'git status -s\n'
+bindkey -s '^Xgl' 'git log --oneline -n 10\n'
+bindkey -s '^Xga' 'git add '
+bindkey -s '^O' 'nvim\n'
