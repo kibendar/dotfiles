@@ -94,6 +94,7 @@ alias hub_log_1='minicom -o -D /dev/ttyUSB0'
 alias hub_log_2='minicom -o -D /dev/ttyUSB1'
 alias rzsh="exec zsh"
 alias rkanata="sudo systemctl restart kanata.service"
+alias open="xdg-open"
 
 # =========================================================
 # Shell utilities
@@ -101,3 +102,17 @@ alias rkanata="sudo systemctl restart kanata.service"
 alias h2d='printf "%d\n" 0x'
 alias d2h='printf "%x\n"'
 alias d2H='printf "%X\n"'
+
+# =========================================================
+# Suffix aliases
+# =========================================================
+alias -s java="$EDITOR"
+alias -s zsh="$EDITOR"
+alias -s py="$EDITOR"
+alias -s rs="$EDITOR"
+alias -s ts="$EDITOR"
+alias -s js="$EDITOR"
+alias -s go="$EDITOR"
+alias -s md="bat"
+alias -s json="jless"
+alias -s yaml="bat -l yaml"
