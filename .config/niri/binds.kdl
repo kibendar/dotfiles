@@ -18,7 +18,7 @@ binds {
     Mod+D hotkey-overlay-title="Launch Discord" { spawn-sh "launch-or-focus vesktop vesktop"; }
     Mod+B hotkey-overlay-title="Launch Browser" { spawn-sh "launch-or-focus zen zen"; }
     Mod+Alt+K hotkey-overlay-title="Launch KeePassXC" { spawn-sh "launch-or-focus KeePassXC keepassxc"; }
-    Mod+Alt+F hotkey-overlay-title="Launch Yazi" { spawn-sh "ghostty -e yazi"; }
+    Mod+Alt+F hotkey-overlay-title="Launch File Manager" { spawn-sh "ghostty -e spf"; }
     Mod+Alt+D hotkey-overlay-title="Launch LocalSend" { spawn-sh "launch-or-focus localsend localsend"; }
     Mod+Alt+C hotkey-overlay-title="Launch Config Niri Directory" { spawn-sh "ghostty --working-directory=$HOME/.config/niri/ -e nvim .";}
 
