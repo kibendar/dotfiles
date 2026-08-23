@@ -3,8 +3,13 @@ binds {
     Mod+Shift+Slash hotkey-overlay-title="Open Keybind Cheatsheet" { spawn "dms" "ipc" "call" "keybinds" "toggle" "niri"; }
     Mod+Shift+D hotkey-overlay-title="Launch Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
-    // dms has no screen recorder; driving gpu-screen-recorder directly (portal source, restore token already set up)
-    Mod+Alt+Ctrl+Shift+S hotkey-overlay-title="Screen Record" { spawn-sh "pkill -SIGINT -x gpu-screen-recorder || gpu-screen-recorder -w portal -f 60 -a default_output -o \"$HOME/Videos/$(date +%Y-%m-%d_%H-%M-%S).mp4\""; }
+    // OBS. Capture goes through xdg-desktop-portal-gnome -> PipeWire; the portal
+    // restore token is already stored, so the source picker no longer appears.
+    Mod+Alt+O hotkey-overlay-title="Launch OBS Studio" { spawn-sh "launch-or-focus com.obsproject.Studio obs"; }
+    // Start/stop recording without touching the OBS window. Wayland gives OBS no
+    // global hotkeys, so this goes through obs-websocket instead (~/.local/bin).
+    // If OBS is not running it launches minimized to tray, already recording.
+    Mod+Alt+Shift+O hotkey-overlay-title="OBS: Toggle Recording" { spawn "obs-record-toggle"; }
     Mod+P hotkey-overlay-title="Screen Toolkit" { spawn "dms" "ipc" "call" "niri" "screenshot"; }
     Mod+Shift+C hotkey-overlay-title="Control Center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
     Mod+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "toggle"; }
@@ -119,7 +124,7 @@ binds {
 
     // Named workspace focus/move
     Mod+1 { focus-workspace "development"; }
-    Mod+2 { focus-workspace "browser"; }
+    Mod+2 { focus-workspace "internet"; }
     Mod+3 { focus-workspace "media"; }
     Mod+4 { focus-workspace "utility"; }
     Mod+5 { focus-workspace 5; }
@@ -128,7 +133,7 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
     Mod+Shift+1 { move-column-to-workspace "development"; }
-    Mod+Shift+2 { move-column-to-workspace "browser"; }
+    Mod+Shift+2 { move-column-to-workspace "internet"; }
     Mod+Shift+3 { move-column-to-workspace "media"; }
     Mod+Shift+4 { move-column-to-workspace "utility"; }
     Mod+Shift+5 { move-column-to-workspace 5; }

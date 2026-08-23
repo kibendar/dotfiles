@@ -31,7 +31,7 @@ window-rule {
 // Browser
 window-rule {
     match app-id=r#"^(zen|zen-alpha|firefox|firefox-esr|firefox-developer-edition|librewolf|floorp|waterfox|mullvad-browser|tor-browser|brave-browser|google-chrome|chromium|vivaldi|opera|epiphany|falkon|qutebrowser|min|midori|nyxt|surf|luakit)$"#
-    open-on-workspace "browser"
+    open-on-workspace "internet"
 }
 
 // Media: messengers and communication
@@ -42,7 +42,7 @@ window-rule {
 
 // Utility: password managers, file sharing, tools
 window-rule {
-    match app-id=r#"^(KeePassXC|org\.gnome\.World\.Secrets|bitwarden|com\.bitwarden\.desktop|1password|localsend|com\.github\.tchx84\.Flatseal|gnome-disks|org\.gnome\.DiskUtility|org\.gnome\.baobab|org\.gnome\.Nautilus|thunar|org\.xfce\.thunar|nemo|org\.gnome\.FileRoller|ark|org\.kde\.ark|org\.kde\.dolphin|com\.github\.unrud\.VideoDownloader|org\.gnome\.Boxes|virt-manager|org\.virt_manager\.virt-manager|org\.gnome\.font-viewer|pavucontrol|org\.pulseaudio\.pavucontrol|nm-connection-editor|org\.gnome\.NetworkDisplays|dconf-editor|ca\.desrt\.dconf-editor|org\.gnome\.tweaks|gparted|org\.gnome\.Calendar|org\.gnome\.Contacts|org\.gnome\.clocks)$"#
+    match app-id=r#"^(KeePassXC|org\.gnome\.World\.Secrets|bitwarden|com\.bitwarden\.desktop|1password|localsend|com\.github\.tchx84\.Flatseal|gnome-disks|org\.gnome\.DiskUtility|org\.gnome\.baobab|org\.gnome\.Nautilus|thunar|org\.xfce\.thunar|nemo|org\.gnome\.FileRoller|ark|org\.kde\.ark|org\.kde\.dolphin|com\.github\.unrud\.VideoDownloader|org\.gnome\.Boxes|virt-manager|org\.virt_manager\.virt-manager|org\.gnome\.font-viewer|pavucontrol|org\.pulseaudio\.pavucontrol|nm-connection-editor|org\.gnome\.NetworkDisplays|dconf-editor|ca\.desrt\.dconf-editor|org\.gnome\.tweaks|gparted|org\.gnome\.Calendar|org\.gnome\.Contacts|org\.gnome\.clocks|com\.obsproject\.Studio$)$"#
     open-on-workspace "utility"
 }
 
