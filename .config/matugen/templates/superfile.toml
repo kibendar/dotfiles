@@ -1,0 +1,65 @@
+# superfile theme, generated from the DMS wallpaper palette.
+# Source template: ~/.config/matugen/templates/superfile.toml
+# Rendered to:     ~/.config/superfile/theme/dms.toml on every DMS theme change.
+# Edit the template, never the rendered file.
+
+# Chroma has no Material palette, so this one value stays fixed.
+# Alternatives: catppuccin-mocha, onedark, nord, dracula, gruvbox, monokai.
+code_syntax_highlight = "catppuccin-mocha"
+
+# ========= Border =========
+file_panel_border = "{{colors.outline.default.hex}}"
+sidebar_border = "{{colors.outline_variant.default.hex}}"
+footer_border = "{{colors.outline.default.hex}}"
+
+# ========= Border Active =========
+file_panel_border_active = "{{colors.primary.default.hex}}"
+sidebar_border_active = "{{colors.primary.default.hex}}"
+footer_border_active = "{{colors.primary.default.hex}}"
+modal_border_active = "{{colors.primary.default.hex}}"
+
+# ========= Background (bg) =========
+full_screen_bg = "{{colors.surface.default.hex}}"
+file_panel_bg = "{{colors.surface.default.hex}}"
+sidebar_bg = "{{colors.surface_container_low.default.hex}}"
+footer_bg = "{{colors.surface_container_low.default.hex}}"
+modal_bg = "{{colors.surface_container.default.hex}}"
+
+# ========= Foreground (fg) =========
+full_screen_fg = "{{colors.on_surface.default.hex}}"
+file_panel_fg = "{{colors.on_surface.default.hex}}"
+sidebar_fg = "{{colors.on_surface_variant.default.hex}}"
+footer_fg = "{{colors.on_surface_variant.default.hex}}"
+modal_fg = "{{colors.on_surface.default.hex}}"
+
+# ========= Special Color =========
+cursor = "{{colors.primary.default.hex}}"
+correct = "{{colors.tertiary.default.hex}}"
+error = "{{colors.error.default.hex}}"
+hint = "{{colors.secondary.default.hex}}"
+cancel = "{{colors.outline.default.hex}}"
+# Gradient color can only have two color!
+gradient_color = ["{{colors.primary.default.hex}}", "{{colors.tertiary.default.hex}}"]
+
+# ========= File Panel Special Items =========
+file_panel_top_directory_icon = "{{colors.primary.default.hex}}"
+file_panel_top_path = "{{colors.secondary.default.hex}}"
+file_panel_item_selected_fg = "{{colors.on_primary_container.default.hex}}"
+file_panel_item_selected_bg = "{{colors.primary_container.default.hex}}"
+
+# ========= Sidebar Special Items =========
+sidebar_title = "{{colors.primary.default.hex}}"
+sidebar_item_selected_fg = "{{colors.on_secondary_container.default.hex}}"
+sidebar_item_selected_bg = "{{colors.secondary_container.default.hex}}"
+sidebar_divider = "{{colors.outline_variant.default.hex}}"
+
+# ========= Modal Special Items =========
+modal_cancel_fg = "{{colors.on_surface_variant.default.hex}}"
+modal_cancel_bg = "{{colors.surface_container_high.default.hex}}"
+
+modal_confirm_fg = "{{colors.on_primary.default.hex}}"
+modal_confirm_bg = "{{colors.primary.default.hex}}"
+
+# ========= Help Menu =========
+help_menu_hotkey = "{{colors.primary.default.hex}}"
+help_menu_title = "{{colors.secondary.default.hex}}"

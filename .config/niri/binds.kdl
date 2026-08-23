@@ -1,16 +1,18 @@
 binds {
-    // Noctalia shell binds
-    Mod+Shift+Slash hotkey-overlay-title="Open Keybind Cheatsheet" { spawn-sh "qs -c noctalia-shell ipc call plugin togglePanel keybind-cheatsheet"; }
-    Mod+Shift+D hotkey-overlay-title="Launch Launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+Alt+Ctrl+Shift+S hotkey-overlay-title="Screen Record" { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-recorder toggle"; }
-    Mod+P hotkey-overlay-title="Screen Toolkit" { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-toolkit toggle"; }
-    Mod+Shift+C hotkey-overlay-title="Control Center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-    Mod+S hotkey-overlay-title="Settings" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    Mod+Shift+W hotkey-overlay-title="Network Panel" { spawn-sh "qs -c noctalia-shell ipc call network togglePanel"; }
-    Mod+Shift+B hotkey-overlay-title="Bluetooth Panel" { spawn-sh "qs -c noctalia-shell ipc call bluetooth togglePanel"; }
-    Mod+Shift+M hotkey-overlay-title="Session menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
-    Mod+Shift+N hotkey-overlay-title="Notifications" { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
+    // DankMaterialShell (dms) binds
+    Mod+Shift+Slash hotkey-overlay-title="Open Keybind Cheatsheet" { spawn "dms" "ipc" "call" "keybinds" "toggle" "niri"; }
+    Mod+Shift+D hotkey-overlay-title="Launch Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    // dms has no screen recorder; driving gpu-screen-recorder directly (portal source, restore token already set up)
+    Mod+Alt+Ctrl+Shift+S hotkey-overlay-title="Screen Record" { spawn-sh "pkill -SIGINT -x gpu-screen-recorder || gpu-screen-recorder -w portal -f 60 -a default_output -o \"$HOME/Videos/$(date +%Y-%m-%d_%H-%M-%S).mp4\""; }
+    Mod+P hotkey-overlay-title="Screen Toolkit" { spawn "dms" "ipc" "call" "niri" "screenshot"; }
+    Mod+Shift+C hotkey-overlay-title="Control Center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
+    Mod+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "toggle"; }
+    // dms folds network + bluetooth into the one control center panel
+    Mod+Shift+W hotkey-overlay-title="Network Panel" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
+    Mod+Shift+B hotkey-overlay-title="Bluetooth Panel" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
+    Mod+Shift+M hotkey-overlay-title="Session menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Mod+Shift+N hotkey-overlay-title="Notifications" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
  
     // Launch apps
     Mod+Return hotkey-overlay-title="Launch Terminal" { spawn-sh "launch-or-focus com.mitchellh.ghostty ghostty -e tmux"; }
@@ -89,10 +91,10 @@ binds {
     // Workspace navigation
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
-    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
-    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
-    Mod+Ctrl+N         { move-column-to-workspace-down; }
-    Mod+Ctrl+P         { move-column-to-workspace-up; }
+    Mod+Ctrl+Page_Down hotkey-overlay-title="Move Column to Workspace Down" { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up hotkey-overlay-title="Move Column to Workspace Up" { move-column-to-workspace-up; }
+    Mod+Ctrl+N hotkey-overlay-title="Move Column to Workspace Down" { move-column-to-workspace-down; }
+    Mod+Ctrl+P hotkey-overlay-title="Move Column to Workspace Up" { move-column-to-workspace-up; }
 
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
@@ -163,9 +165,9 @@ binds {
     Mod+W { toggle-column-tabbed-display; }
 
     // Screenshots
-    Mod+Shift+S  { spawn-sh "flameshot gui"; }
-    Mod+Ctrl+S   { screenshot-screen; }
-    Mod+Alt+S    { screenshot-window; }
+    Mod+Shift+S hotkey-overlay-title="Screenshot (Flameshot)" { spawn-sh "flameshot gui"; }
+    Mod+Ctrl+S hotkey-overlay-title="Screenshot Screen" { screenshot-screen; }
+    Mod+Alt+S hotkey-overlay-title="Screenshot Window" { screenshot-window; }
 
     // System
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }

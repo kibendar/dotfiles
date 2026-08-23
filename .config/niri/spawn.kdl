@@ -1,5 +1,11 @@
-spawn-sh-at-startup "qs -c noctalia-shell"
-spawn-sh-at-startup "awww-daemon & sleep 1; awww img $HOME/Pictures/Wallpapers/watchtower_mountains_and_forests_kanagawa.jpg"
+// dms is started by its own systemd user unit (dms.service, WantedBy
+// graphical-session.target, Restart=on-failure). Do NOT spawn it here too --
+// you get two shells and two status bars. Check with: systemctl --user status dms
+
+// dms owns the wallpaper now, and its matugen theming keys off it, so awww is
+// disabled to stop the two fighting over the background. Re-enable this line and
+// drop the dms wallpaper if you'd rather keep awww.
+// spawn-sh-at-startup "awww-daemon & sleep 1; awww img $HOME/Pictures/Wallpapers/watchtower_mountains_and_forests_kanagawa.jpg"
 spawn-sh-at-startup "ghostty -e tmux"
 spawn-at-startup "zen"
 

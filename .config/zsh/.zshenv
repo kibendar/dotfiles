@@ -28,4 +28,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # =========================================================
 # PATH
 # =========================================================
-export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.opencode/bin:$HOME/.npm-global/bin/:$PATH"
+# pnpm is installed via pacman, so `pnpm setup` can't run (it would try to
+# write /usr/bin/package.json). Wire it up by hand instead. Note: as of
+# pnpm 11 the global bin dir is $PNPM_HOME/bin, not $PNPM_HOME itself.
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+
+export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.opencode/bin:$HOME/.npm-global/bin/:$PNPM_HOME/bin:$PATH"

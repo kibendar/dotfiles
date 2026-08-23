@@ -1,0 +1,21 @@
+font-family = JetBrainsMono Nerd Font
+
+font-size = 15
+
+keybind = ctrl+q=quit
+
+keybind = shift+enter=paste_from_clipboard
+
+confirm-close-surface = false
+
+background-opacity = 0.90
+
+custom-shader = shaders/cursor_warp.glsl
+
+cursor-style = block
+
+# Shell integration
+shell-integration = zsh
+shell-integration-features = no-cursor,no-sudo
+
+window-padding-balance = true

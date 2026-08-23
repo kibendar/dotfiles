@@ -31,7 +31,8 @@ sudo pacman -S git stow zsh tmux neovim btop mpv fastfetch fzf eza bat ripgrep \
 AUR packages:
 
 ```bash
-paru -S noctalia-shell zen-browser-bin localsend-bin gowall
+sudo pacman -S dms-shell dms-shell-niri
+paru -S zen-browser-bin localsend-bin gowall
 ```
 
 ### 3. Install oh-my-zsh
@@ -79,13 +80,13 @@ stow .
 | Tool                               | Purpose              | Theme            |
 | ---------------------------------- | -------------------- | ---------------- |
 | [Niri](#-niri)                     | Wayland compositor   | Kanagawa         |
-| [Noctalia Shell](#-noctalia-shell) | Desktop shell        | Noctalia         |
-| [Ghostty](#-ghostty)               | Terminal emulator    | Noctalia         |
+| [DankMaterialShell](#-dankmaterialshell) | Desktop shell  | matugen (dms)    |
+| [Ghostty](#-ghostty)               | Terminal emulator    | matugen (dms)    |
 | [Tmux](#-tmux)                     | Terminal multiplexer | Kanagawa         |
 | [Zsh](#-zsh)                       | Shell                | —                |
 | [Neovim](#-neovim)                 | Editor               | Catppuccin Mocha |
 | [Lazygit](#-lazygit)               | Git TUI              | Catppuccin Mocha |
-| [btop](#-btop)                     | System monitor       | Noctalia         |
+| [btop](#-btop)                     | System monitor       | matugen (dms)    |
 | [mpv](#-mpv)                       | Media player         | Catppuccin Mocha |
 | [fastfetch](#-fastfetch)           | System info          | —                |
 | [brrtfetch](#-brrtfetch)           | Animated system info | —                |
@@ -198,26 +199,32 @@ Window rules auto-route apps by `app-id`: terminals and editors → development,
 
 ---
 
-## Noctalia Shell
+## DankMaterialShell
 
-[Noctalia Shell](https://github.com/noctalia/noctalia-shell) is a [Quickshell](https://quickshell.outfoxxed.me/)-based desktop shell launched at startup via `qs -c noctalia-shell`. It provides the bar, launcher, control center, notifications, lock screen, screen recorder, and session menu — all themed with Noctalia.
+[DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) (`dms`) is a [Quickshell](https://quickshell.org/)-based desktop shell launched at startup via `dms run`. It provides the bar, launcher, control center, notifications, lock screen and session menu. It replaced Noctalia Shell, whose upstream was archived and whose Quickshell fork could no longer build against current Qt.
+
+Colors are applied to niri through `.config/niri/dms/colors.kdl`, which `dms` generates and `config.kdl` includes.
 
 <details>
 <summary><strong>Key bindings</strong></summary>
 
-| Keys                   | Action               |
-| ---------------------- | -------------------- |
-| `Mod+Shift+D`          | App launcher         |
-| `Mod+Shift+C`          | Control center       |
-| `Mod+Shift+N`          | Notification history |
-| `Mod+Shift+W`          | Network panel        |
-| `Mod+Shift+B`          | Bluetooth panel      |
-| `Mod+Shift+M`          | Session menu         |
-| `Mod+S`                | Settings             |
-| `Mod+P`                | Screen toolkit       |
-| `Mod+Alt+L`            | Lock screen          |
-| `Mod+Alt+Ctrl+Shift+S` | Screen recorder      |
-| `Mod+Shift+/`          | Keybind cheatsheet   |
+| Keys                   | Action               | IPC call                            |
+| ---------------------- | -------------------- | ----------------------------------- |
+| `Mod+Shift+D`          | App launcher         | `spotlight toggle`                  |
+| `Mod+Shift+C`          | Control center       | `control-center toggle`             |
+| `Mod+Shift+N`          | Notification history | `notifications toggle`              |
+| `Mod+Shift+W`          | Network panel        | `control-center toggle`             |
+| `Mod+Shift+B`          | Bluetooth panel      | `control-center toggle`             |
+| `Mod+Shift+M`          | Session menu         | `powermenu toggle`                  |
+| `Mod+S`                | Settings             | `settings toggle`                   |
+| `Mod+P`                | Screenshot region    | `niri screenshot`                   |
+| `Mod+Alt+L`            | Lock screen          | `lock lock`                         |
+| `Mod+Alt+Ctrl+Shift+S` | Screen recorder      | gpu-screen-recorder (not a dms feature) |
+| `Mod+Shift+/`          | Keybind cheatsheet   | `keybinds toggle`                   |
+
+`dms` folds network and Bluetooth into the single control center panel, so `Mod+Shift+W` and
+`Mod+Shift+B` both open it. It ships no screen recorder, so that bind drives
+`gpu-screen-recorder` directly.
 
 </details>
 
@@ -229,7 +236,7 @@ GPU-accelerated terminal emulator with a custom cursor shader.
 
 | Setting            | Value                               |
 | ------------------ | ----------------------------------- |
-| Theme              | Noctalia                            |
+| Theme              | matugen (dms), stock until generated |
 | Font               | JetBrainsMono Nerd Font, size 15    |
 | Background opacity | 0.90                                |
 | Cursor             | Block + `cursor_warp.glsl` shader   |
@@ -486,13 +493,14 @@ Catppuccin Mocha colors applied via manually specified hex values in the `gui.th
 
 | Setting         | Value                        |
 | --------------- | ---------------------------- |
-| Theme           | Noctalia                     |
+| Theme           | matugen (dms), stock until generated |
 | Graph symbols   | Braille (highest resolution) |
 | Update rate     | 2 000 ms                     |
 | Vim keybindings | Enabled                      |
 | Process sort    | CPU (lazy)                   |
 
-The `noctalia.theme` file at `.config/btop/themes/` is generated by the Noctalia project.
+btop themes live at `.config/btop/themes/`. `dms` regenerates one there via matugen from the
+active wallpaper; `catppuccin_mocha.theme` remains as a static fallback.
 
 ---
 
@@ -608,6 +616,6 @@ JetBrainsMono Nerd Font across all tools. Install from [Nerd Fonts](https://www.
 
 Three theme families are in use:
 
-- **[Noctalia](https://github.com/noctalia/noctalia-shell)** — Ghostty, btop, Noctalia Shell. Theme files are generated by the Noctalia project; no manual color definitions.
+- **[matugen](https://github.com/InioX/matugen) via [dms](https://github.com/AvengeMedia/DankMaterialShell)** — Ghostty, btop, DankMaterialShell. Colors are derived from the active wallpaper; no manual color definitions.
 - **[Kanagawa](https://github.com/rebelot/kanagawa.nvim)** — Tmux (pane borders, copy mode, message styles, status module color overrides), Niri window decoration gradients, gowall wallpaper palettes.
 - **[Catppuccin Mocha](https://github.com/catppuccin/catppuccin)** — Neovim, Lazygit (manual hex values), mpv OSD and uosc UI colors.

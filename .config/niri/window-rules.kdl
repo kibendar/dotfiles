@@ -1,5 +1,12 @@
+// Place the dms wallpaper inside the niri overview backdrop
 layer-rule {
-    match namespace="^noctalia-overview*"
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+// Same, for when "Blur Layer" is enabled in dms
+layer-rule {
+    match namespace="dms:blurwallpaper"
     place-within-backdrop true
 }
 
@@ -53,6 +60,6 @@ window-rule {
 }
 
 debug {
-  // Allows notification actions and window activation from Noctalia.
+  // Allows notification actions and window activation from dms.
   honor-xdg-activation-with-invalid-serial
 }

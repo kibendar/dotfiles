@@ -1,0 +1,65 @@
+# superfile theme, generated from the DMS wallpaper palette.
+# Source template: ~/.config/matugen/templates/superfile.toml
+# Rendered to:     ~/.config/superfile/theme/dms.toml on every DMS theme change.
+# Edit the template, never the rendered file.
+
+# Chroma has no Material palette, so this one value stays fixed.
+# Alternatives: catppuccin-mocha, onedark, nord, dracula, gruvbox, monokai.
+code_syntax_highlight = "catppuccin-mocha"
+
+# ========= Border =========
+file_panel_border = "#8e9099"
+sidebar_border = "#44474e"
+footer_border = "#8e9099"
+
+# ========= Border Active =========
+file_panel_border_active = "#abc7ff"
+sidebar_border_active = "#abc7ff"
+footer_border_active = "#abc7ff"
+modal_border_active = "#abc7ff"
+
+# ========= Background (bg) =========
+full_screen_bg = "#111318"
+file_panel_bg = "#111318"
+sidebar_bg = "#1a1c20"
+footer_bg = "#1a1c20"
+modal_bg = "#1e2025"
+
+# ========= Foreground (fg) =========
+full_screen_fg = "#e2e2e9"
+file_panel_fg = "#e2e2e9"
+sidebar_fg = "#c4c6d0"
+footer_fg = "#c4c6d0"
+modal_fg = "#e2e2e9"
+
+# ========= Special Color =========
+cursor = "#abc7ff"
+correct = "#ddbce0"
+error = "#ffb4ab"
+hint = "#bec6dc"
+cancel = "#8e9099"
+# Gradient color can only have two color!
+gradient_color = ["#abc7ff", "#ddbce0"]
+
+# ========= File Panel Special Items =========
+file_panel_top_directory_icon = "#abc7ff"
+file_panel_top_path = "#bec6dc"
+file_panel_item_selected_fg = "#d7e2ff"
+file_panel_item_selected_bg = "#294677"
+
+# ========= Sidebar Special Items =========
+sidebar_title = "#abc7ff"
+sidebar_item_selected_fg = "#dae2f9"
+sidebar_item_selected_bg = "#3e4759"
+sidebar_divider = "#44474e"
+
+# ========= Modal Special Items =========
+modal_cancel_fg = "#c4c6d0"
+modal_cancel_bg = "#282a2f"
+
+modal_confirm_fg = "#0c305f"
+modal_confirm_bg = "#abc7ff"
+
+# ========= Help Menu =========
+help_menu_hotkey = "#abc7ff"
+help_menu_title = "#bec6dc"

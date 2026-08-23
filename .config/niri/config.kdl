@@ -1,5 +1,11 @@
 // Niri configuration entry point
 // https://yalter.github.io/niri/Configuration:-Introduction
+//
+// WARNING: DMS's niri setup (Settings -> Compositor) rewrites THIS file into a
+// single flattened config and drops every include below. If your startup apps,
+// keybinds or workspace routing vanish after touching DMS settings, check that
+// these include lines still exist. A copy of DMS's version is kept alongside as
+// config.kdl.dms-flattened.
 
 prefer-no-csd
 
@@ -14,9 +20,14 @@ include "./layout.kdl"
 include "./workspaces.kdl"
 include "./window-rules.kdl"
 include "./binds.kdl"
-include "./noctalia.kdl"
 include "./gestures.kdl"
 include "./spawn.kdl"
 include "./monitors.kdl"
 include "./animations.kdl"
 include "./environment.kdl"
+
+// dms-generated, auto-updated on theme/cursor changes. Kept last so they win
+// where they overlap. dms/binds.kdl is deliberately NOT included: its defaults
+// take Mod+V, Mod+Comma and Mod+M, which collide with binds.kdl.
+include optional=true "dms/colors.kdl"
+include optional=true "dms/cursor.kdl"

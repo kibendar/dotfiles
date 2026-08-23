@@ -1,0 +1,14 @@
+# User matugen templates, rendered by DMS alongside its own.
+#
+# DMS runs these on every wallpaper/theme change as long as
+# "runUserMatugenTemplates": true in ~/.config/DankMaterialShell/settings.json
+# (equivalently: dms matugen generate --run-user-templates, the default).
+#
+# Add an app here when DMS ships no template for it. Check first with:
+#   ls /usr/share/quickshell/dms/matugen/configs/
+
+[config]
+
+[templates.superfile]
+input_path = '~/.config/matugen/templates/superfile.toml'
+output_path = '~/.config/superfile/theme/dms.toml'

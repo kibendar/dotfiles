@@ -1,6 +1,9 @@
 layout {
     gaps 8
 
+    // Transparent so the dms wallpaper shows through the overview backdrop
+    background-color "transparent"
+
     center-focused-column "never"
 
     preset-column-widths {
