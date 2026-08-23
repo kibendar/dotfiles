@@ -8,58 +8,58 @@
 code_syntax_highlight = "catppuccin-mocha"
 
 # ========= Border =========
-file_panel_border = "#8e9099"
-sidebar_border = "#44474e"
-footer_border = "#8e9099"
+file_panel_border = "#727072"
+sidebar_border = "#403e41"
+footer_border = "#727072"
 
 # ========= Border Active =========
-file_panel_border_active = "#abc7ff"
-sidebar_border_active = "#abc7ff"
-footer_border_active = "#abc7ff"
-modal_border_active = "#abc7ff"
+file_panel_border_active = "#ffd866"
+sidebar_border_active = "#ffd866"
+footer_border_active = "#ffd866"
+modal_border_active = "#ffd866"
 
 # ========= Background (bg) =========
-full_screen_bg = "#111318"
-file_panel_bg = "#111318"
-sidebar_bg = "#1a1c20"
-footer_bg = "#1a1c20"
-modal_bg = "#1e2025"
+full_screen_bg = "#2d2a2e"
+file_panel_bg = "#2d2a2e"
+sidebar_bg = "#2d2a2e"
+footer_bg = "#2d2a2e"
+modal_bg = "#2d2a2e"
 
 # ========= Foreground (fg) =========
-full_screen_fg = "#e2e2e9"
-file_panel_fg = "#e2e2e9"
-sidebar_fg = "#c4c6d0"
-footer_fg = "#c4c6d0"
-modal_fg = "#e2e2e9"
+full_screen_fg = "#fcfcfa"
+file_panel_fg = "#fcfcfa"
+sidebar_fg = "#939293"
+footer_fg = "#939293"
+modal_fg = "#fcfcfa"
 
 # ========= Special Color =========
-cursor = "#abc7ff"
-correct = "#ddbce0"
-error = "#ffb4ab"
-hint = "#bec6dc"
-cancel = "#8e9099"
+cursor = "#ffd866"
+correct = "#fc9867"
+error = "#ff6188"
+hint = "#fc9867"
+cancel = "#727072"
 # Gradient color can only have two color!
-gradient_color = ["#abc7ff", "#ddbce0"]
+gradient_color = ["#ffd866", "#fc9867"]
 
 # ========= File Panel Special Items =========
-file_panel_top_directory_icon = "#abc7ff"
-file_panel_top_path = "#bec6dc"
-file_panel_item_selected_fg = "#d7e2ff"
-file_panel_item_selected_bg = "#294677"
+file_panel_top_directory_icon = "#ffd866"
+file_panel_top_path = "#fc9867"
+file_panel_item_selected_fg = "#fcfcfa"
+file_panel_item_selected_bg = "#6e5a2f"
 
 # ========= Sidebar Special Items =========
-sidebar_title = "#abc7ff"
-sidebar_item_selected_fg = "#dae2f9"
-sidebar_item_selected_bg = "#3e4759"
-sidebar_divider = "#44474e"
+sidebar_title = "#ffd866"
+sidebar_item_selected_fg = "#fcfcfa"
+sidebar_item_selected_bg = "#403e41"
+sidebar_divider = "#403e41"
 
 # ========= Modal Special Items =========
-modal_cancel_fg = "#c4c6d0"
-modal_cancel_bg = "#282a2f"
+modal_cancel_fg = "#939293"
+modal_cancel_bg = "#403e41"
 
-modal_confirm_fg = "#0c305f"
-modal_confirm_bg = "#abc7ff"
+modal_confirm_fg = "#19181a"
+modal_confirm_bg = "#ffd866"
 
 # ========= Help Menu =========
-help_menu_hotkey = "#abc7ff"
-help_menu_title = "#bec6dc"
+help_menu_hotkey = "#ffd866"
+help_menu_title = "#fc9867"
